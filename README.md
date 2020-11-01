@@ -16,6 +16,8 @@ plugins: [
     options: {
       apiURL: `http://localhost:1337`,
       contentTypes: [`article`, `user`],
+      //If using single types place them in this array.
+      singleTypes: [`home-page`, `contact`],
       availableLngs: ['en', 'de'],
       // Possibility to login with a strapi user, when content types are not publically available (optional).
       loginData: {
