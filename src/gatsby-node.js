@@ -9,6 +9,7 @@ exports.sourceNodes = async (
   {
     apiURL = 'http://localhost:1337',
     contentTypes = [],
+    singleTypes = [],
     loginData = {},
     availableLngs = [],
   }
@@ -44,17 +45,29 @@ exports.sourceNodes = async (
   }
 
   // Generate a list of promises based on the `contentTypes` option.
-  const promises = contentTypes.map(contentType =>
+  const contentTypePromises = contentTypes.map(contentType =>
     fetchData({
       apiURL,
       contentType,
       jwtToken,
-      availableLngs,
+      queryLimit,
+      reporter,
+    })
+  )
+
+  // Generate a list of promises based on the `singleTypes` option.
+  const singleTypePromises = singleTypes.map(singleType =>
+    fetchData({
+      apiURL,
+      singleType,
+      jwtToken,
+      queryLimit,
+      reporter,
     })
   )
 
   // Execute the promises.
-  let entities = await Promise.all(promises)
+  let entities = await Promise.all([...contentTypePromises, ...singleTypePromises])
 
   entities = await normalize.downloadMediaFiles({
     entities,
@@ -66,7 +79,7 @@ exports.sourceNodes = async (
     jwtToken,
   })
 
-  contentTypes.forEach((contentType, i) => {
+  contentTypes.concat(singleTypes).forEach((contentType, i) => {
     const items = entities[i]
     items.forEach((item, i) => {
       const node = Node(capitalize(contentType), item)

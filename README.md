@@ -12,7 +12,7 @@ Source plugin for pulling documents into Gatsby 2 from a Strapi API.
 // In your gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-source-strapi`,
+    resolve: `gatsby-source-strapi-localized`,
     options: {
       apiURL: `http://localhost:1337`,
       contentTypes: [`article`, `user`],
