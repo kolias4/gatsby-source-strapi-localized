@@ -67,7 +67,10 @@ exports.sourceNodes = async (
   )
 
   // Execute the promises.
-  let entities = await Promise.all([...contentTypePromises, ...singleTypePromises])
+  let entities = await Promise.all([
+    ...contentTypePromises,
+    ...singleTypePromises,
+  ])
 
   entities = await normalize.downloadMediaFiles({
     entities,
