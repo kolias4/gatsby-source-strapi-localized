@@ -57,10 +57,10 @@ exports.sourceNodes = async (
   // Generate a list of promises based on the `singleTypes` option.
   const singleTypePromises = singleTypes.map(singleType =>
     fetchData({
-    apiURL,
-    singleType,
-    jwtToken,
-    availableLngs,
+      apiURL,
+      singleType,
+      jwtToken,
+      availableLngs,
     })
   )
 
