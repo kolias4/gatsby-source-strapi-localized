@@ -66,7 +66,7 @@ exports.downloadMediaFiles = function () {
 
                       case 5:
                         if (_iteratorNormalCompletion = (_step = _iterator.next()).done) {
-                          _context.next = 60;
+                          _context.next = 57;
                           break;
                         }
 
@@ -81,7 +81,7 @@ exports.downloadMediaFiles = function () {
 
                       case 12:
                         if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
-                          _context.next = 43;
+                          _context.next = 40;
                           break;
                         }
 
@@ -92,7 +92,7 @@ exports.downloadMediaFiles = function () {
                         // maybe should find a better test
 
                         if (!(field !== null && field.hasOwnProperty('mime'))) {
-                          _context.next = 40;
+                          _context.next = 37;
                           break;
                         }
 
@@ -117,7 +117,7 @@ exports.downloadMediaFiles = function () {
                         // If we don't have cached data, download the file
 
                         if (fileNodeID) {
-                          _context.next = 37;
+                          _context.next = 36;
                           break;
                         }
 
@@ -138,127 +138,120 @@ exports.downloadMediaFiles = function () {
                       case 27:
                         fileNode = _context.sent;
 
-                        console.log('@@@ fileNode', fileNode);
-
-                        // If we don't have cached data, download the file
-
                         if (!fileNode) {
-                          _context.next = 33;
+                          _context.next = 32;
                           break;
                         }
 
                         fileNodeID = fileNode.id;
 
-                        _context.next = 33;
+                        _context.next = 32;
                         return cache.set(mediaDataCacheKey, {
                           fileNodeID: fileNodeID,
                           modified: field.updatedAt
                         });
 
-                      case 33:
-                        _context.next = 37;
+                      case 32:
+                        _context.next = 36;
                         break;
 
-                      case 35:
-                        _context.prev = 35;
+                      case 34:
+                        _context.prev = 34;
                         _context.t0 = _context['catch'](23);
 
-                      case 37:
-                        console.log('@@@ key', key);
+                      case 36:
 
                         if (fileNodeID) {
                           item[key + '___NODE'] = fileNodeID;
                         }
 
-                        console.log('@@@ item', item);
-
-                      case 40:
+                      case 37:
                         _iteratorNormalCompletion2 = true;
                         _context.next = 12;
                         break;
 
-                      case 43:
-                        _context.next = 49;
+                      case 40:
+                        _context.next = 46;
                         break;
 
-                      case 45:
-                        _context.prev = 45;
+                      case 42:
+                        _context.prev = 42;
                         _context.t1 = _context['catch'](10);
                         _didIteratorError2 = true;
                         _iteratorError2 = _context.t1;
 
-                      case 49:
-                        _context.prev = 49;
-                        _context.prev = 50;
+                      case 46:
+                        _context.prev = 46;
+                        _context.prev = 47;
 
                         if (!_iteratorNormalCompletion2 && _iterator2.return) {
                           _iterator2.return();
                         }
 
-                      case 52:
-                        _context.prev = 52;
+                      case 49:
+                        _context.prev = 49;
 
                         if (!_didIteratorError2) {
-                          _context.next = 55;
+                          _context.next = 52;
                           break;
                         }
 
                         throw _iteratorError2;
 
-                      case 55:
-                        return _context.finish(52);
-
-                      case 56:
+                      case 52:
                         return _context.finish(49);
 
-                      case 57:
+                      case 53:
+                        return _context.finish(46);
+
+                      case 54:
                         _iteratorNormalCompletion = true;
                         _context.next = 5;
                         break;
 
-                      case 60:
-                        _context.next = 66;
+                      case 57:
+                        _context.next = 63;
                         break;
 
-                      case 62:
-                        _context.prev = 62;
+                      case 59:
+                        _context.prev = 59;
                         _context.t2 = _context['catch'](3);
                         _didIteratorError = true;
                         _iteratorError = _context.t2;
 
-                      case 66:
-                        _context.prev = 66;
-                        _context.prev = 67;
+                      case 63:
+                        _context.prev = 63;
+                        _context.prev = 64;
 
                         if (!_iteratorNormalCompletion && _iterator.return) {
                           _iterator.return();
                         }
 
-                      case 69:
-                        _context.prev = 69;
+                      case 66:
+                        _context.prev = 66;
 
                         if (!_didIteratorError) {
-                          _context.next = 72;
+                          _context.next = 69;
                           break;
                         }
 
                         throw _iteratorError;
 
-                      case 72:
-                        return _context.finish(69);
-
-                      case 73:
+                      case 69:
                         return _context.finish(66);
 
-                      case 74:
+                      case 70:
+                        return _context.finish(63);
+
+                      case 71:
                         return _context.abrupt('return', entity);
 
-                      case 75:
+                      case 72:
                       case 'end':
                         return _context.stop();
                     }
                   }
-                }, _callee, undefined, [[3, 62, 66, 74], [10, 45, 49, 57], [23, 35], [50,, 52, 56], [67,, 69, 73]]);
+                }, _callee, undefined, [[3, 59, 63, 71], [10, 42, 46, 54], [23, 34], [47,, 49, 53], [64,, 66, 70]]);
               }));
 
               return function (_x2) {
