@@ -8,8 +8,8 @@ module.exports = async ({
   jwtToken,
   availableLngs,
 }) => {
-  console.time('Fetch Strapi data')
-  console.log(`Starting to fetch data from Strapi (${contentType})`)
+  console.log('Fetch Strapi data')
+  console.log(`Starting to fetch data from Strapi (${contentType || singleType})`)
 
   // Define API endpoint.
   const apiEndpoint = `${apiURL}/${contentType || singleType}`
@@ -23,10 +23,15 @@ module.exports = async ({
   }
 
   // Make API request.
-  const documents = await axios(apiEndpoint, fetchRequestConfig)
+  var documents = await axios(apiEndpoint, fetchRequestConfig)
 
   // Query all documents from client.
-  console.timeEnd('Fetch Strapi data')
+  console.log('Fetch Strapi data')
+
+
+  if(!Array.isArray(documents.data)){
+    documents.data = [documents.data]
+  }
 
   // Map and clean data.
   return documents.data.map(item => {

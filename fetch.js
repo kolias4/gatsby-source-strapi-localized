@@ -40,8 +40,8 @@ module.exports = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            console.time('Fetch Strapi data');
-            console.log('Starting to fetch data from Strapi (' + contentType + ')');
+            console.log('Fetch Strapi data');
+            console.log('Starting to fetch data from Strapi (' + (contentType || singleType) + ')');
 
             // Define API endpoint.
             apiEndpoint = apiURL + '/' + (contentType || singleType);
@@ -65,7 +65,11 @@ module.exports = function () {
 
 
             // Query all documents from client.
-            console.timeEnd('Fetch Strapi data');
+            console.log('Fetch Strapi data');
+
+            if (!Array.isArray(documents.data)) {
+              documents.data = [documents.data];
+            }
 
             // Map and clean data.
             return _context.abrupt('return', documents.data.map(function (item) {
@@ -84,7 +88,7 @@ module.exports = function () {
               return cleanItem;
             }));
 
-          case 10:
+          case 11:
           case 'end':
             return _context.stop();
         }
