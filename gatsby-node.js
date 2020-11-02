@@ -104,8 +104,7 @@ exports.sourceNodes = function () {
                 apiURL: apiURL,
                 contentType: contentType,
                 jwtToken: jwtToken,
-                queryLimit: queryLimit,
-                reporter: reporter
+                availableLngs: availableLngs
               });
             });
 
@@ -116,8 +115,7 @@ exports.sourceNodes = function () {
                 apiURL: apiURL,
                 singleType: singleType,
                 jwtToken: jwtToken,
-                queryLimit: queryLimit,
-                reporter: reporter
+                availableLngs: availableLngs
               });
             });
 
