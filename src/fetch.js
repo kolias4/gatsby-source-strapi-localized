@@ -9,7 +9,9 @@ module.exports = async ({
   availableLngs,
 }) => {
   console.log('Fetch Strapi data')
-  console.log(`Starting to fetch data from Strapi (${contentType || singleType})`)
+  console.log(
+    `Starting to fetch data from Strapi (${contentType || singleType})`
+  )
 
   // Define API endpoint.
   const apiEndpoint = `${apiURL}/${contentType || singleType}`
@@ -28,8 +30,7 @@ module.exports = async ({
   // Query all documents from client.
   console.log('Fetch Strapi data')
 
-
-  if(!Array.isArray(documents.data)){
+  if (!Array.isArray(documents.data)) {
     documents.data = [documents.data]
   }
 
