@@ -1,7 +1,13 @@
 import axios from 'axios'
 import { isObject, startsWith, forEach } from 'lodash'
 
-module.exports = async ({ apiURL, contentType, singleType, jwtToken, availableLngs }) => {
+module.exports = async ({
+  apiURL,
+  contentType,
+  singleType,
+  jwtToken,
+  availableLngs,
+}) => {
   console.time('Fetch Strapi data')
   console.log(`Starting to fetch data from Strapi (${contentType})`)
 
