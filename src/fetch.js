@@ -1,12 +1,12 @@
 import axios from 'axios'
 import { isObject, startsWith, forEach } from 'lodash'
 
-module.exports = async ({ apiURL, contentType, jwtToken, availableLngs }) => {
+module.exports = async ({ apiURL, contentType, singleType, jwtToken, availableLngs }) => {
   console.time('Fetch Strapi data')
   console.log(`Starting to fetch data from Strapi (${contentType})`)
 
   // Define API endpoint.
-  const apiEndpoint = `${apiURL}/${contentType}`
+  const apiEndpoint = `${apiURL}/${contentType || singleType}`
 
   // Set authorization token
   let fetchRequestConfig = {}

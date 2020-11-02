@@ -32,6 +32,7 @@ module.exports = function () {
   var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2) {
     var apiURL = _ref2.apiURL,
         contentType = _ref2.contentType,
+        singleType = _ref2.singleType,
         jwtToken = _ref2.jwtToken,
         availableLngs = _ref2.availableLngs;
     var apiEndpoint, fetchRequestConfig, documents;
@@ -43,7 +44,7 @@ module.exports = function () {
             console.log('Starting to fetch data from Strapi (' + contentType + ')');
 
             // Define API endpoint.
-            apiEndpoint = apiURL + '/' + contentType;
+            apiEndpoint = apiURL + '/' + (contentType || singleType);
 
             // Set authorization token
 
