@@ -1,6 +1,7 @@
 # gatsby-source-strapi-localized
 
 Source plugin for pulling documents into Gatsby 2 from a Strapi API.
+Includes singleType support
 
 ## Install
 
@@ -16,6 +17,7 @@ plugins: [
     options: {
       apiURL: `http://localhost:1337`,
       contentTypes: [`article`, `user`],
+      singleTypes: [`home-page`, `contact`],
       availableLngs: ['en', 'de'],
       // Possibility to login with a strapi user, when content types are not publically available (optional).
       loginData: {
